@@ -1,0 +1,41 @@
+@media screen and (max-width: 1200px){
+    .header{
+        .content-wrapper{
+            padding: 3rem 3rem;
+        }
+    }
+    .main{
+        .content-wrapper{
+            padding-bottom: 10rem;
+            .img-wrapper{
+                min-width: 35rem;
+                min-height: 31.25rem;
+            }
+        }
+    }
+    .section{
+        &--offer{
+            .content-wrapper{
+                .background-text{
+                    left: 1%;
+                }
+            }
+        }
+        &--order{
+            .content-wrapper{
+                .background-text{
+                    visibility: hidden;
+                }
+                form{
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+            }
+        }
+    }
+    .footer{
+        .content-wrapper{
+            padding: 4rem;
+        }
+    }
+}

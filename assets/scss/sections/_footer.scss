@@ -1,0 +1,118 @@
+.footer{
+    background-color: $primary-color;
+    .content-wrapper{
+        max-width: 144rem;
+        width: 100%;
+        margin: auto;
+        padding: 5.8rem 17rem 7rem 6.4rem;
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        .column{
+            display: flex;
+            flex-direction: column;
+            &--social{
+                margin-right: 4rem;
+            }
+            &--menu{
+                .link{
+                    &--nav{
+                        text-transform: uppercase;
+                        
+                        &:not(:last-child){
+                            margin-right: 4.6rem;
+                        }
+                    }
+                    &--communication{
+                        margin-bottom: 1.6rem;
+                        align-self: flex-start;
+                    }
+                }
+                form{
+                    margin-top: 1.4rem;
+                    position: relative;
+                    width: 100%;
+                    [type="email"]{
+                        background-color: transparent;
+                        border: none;
+                        border-bottom: 1px solid #8690ce;
+                        padding-bottom: 1.8rem;
+                        width: 100%;
+                        padding-top: 2rem;
+                        font-size: 3.1rem;
+                        color: rgb(134, 144, 206);
+                        line-height: 1.2;
+                    }
+                    ::-webkit-input-placeholder {
+                        font-size: 3.1rem;
+                        color: rgb(134, 144, 206);
+                        line-height: 1.2;
+                    }
+                    ::-moz-placeholder          {
+                        font-size: 3.1rem;
+                        color: rgb(134, 144, 206);
+                        line-height: 1.2;
+                    }
+                    :-ms-input-placeholder      {
+                        font-size: 3.1rem;
+                        color: rgb(134, 144, 206);
+                        line-height: 1.2;
+                    }
+                    .button{
+                        &--text{
+                            font-size: 1.4rem;
+                            color: rgb(248, 61, 112);
+                            font-weight: bold;
+                            text-transform: uppercase;
+                            line-height: 1.5;
+                            position: absolute;
+                            right: 0;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            
+                            &:hover{
+                                color: #fff;
+                            }
+                        }
+                    }
+                }
+                .button{
+                    &--up{
+                        position: absolute;
+                        right: 4.4%;
+                        top: calc(50% - 3rem);
+                        transform: translateY(-50%);
+                        padding: 1.4rem 2.2rem;
+                        background-color: transparent;
+                        
+                        &:hover{
+                            &:before, &:after{
+                                background-color: #fff;
+                            }
+                        }
+                        &:before, &:after{
+                            content: "";
+                            position: absolute;
+                            width: 2.8rem;
+                            height: 0.5rem;
+                            background-color: $secondary-color;
+                        }
+                        &:before{
+                            transform: rotate(45deg);
+                            left: calc(50% - 0.4rem);
+                        }
+                        &:after{
+                            transform: rotate(-45deg);
+                            left: calc(50% - 2rem);
+                        }
+                    }
+                }
+            }
+            &__navigation{
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 2.8rem;
+            }
+        }
+    }
+}

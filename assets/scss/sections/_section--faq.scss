@@ -1,0 +1,97 @@
+.section{
+    &--faq{
+        .content-wrapper{
+            max-width: 117rem;
+            margin: auto;
+            position: relative;
+            padding: 5rem;
+            
+            .background-text{
+                position: absolute;
+                left: 50%;
+                top: 0;
+            }
+            
+            .faq{
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                
+                &__item{
+                    display: flex;
+                    flex-direction: column;
+                    width: auto;
+                    width: calc(50% - 2rem);
+                    
+                    &:nth-child(-n+2){
+                        margin-bottom: 5rem;
+                    }
+                    &:nth-child(odd){
+                        margin-right: 2rem;
+                    }
+                    &.active{
+                        .faq__item{
+                            &__title{
+                                margin-bottom: 3.2rem;
+                                
+                                &:before, &:after{
+                                    top: 50%;
+                                }
+                                &:before{
+                                    left: calc(0px - 4px);
+                                }
+                                &:after{
+                                    left: calc(0px + 4px);
+                                }
+                            }
+                            &__description{
+                                display: block;
+                            }
+                        }
+                    }
+                    &__title{
+                        font-size: 2.4rem;
+                        line-height: 0.875;
+                        padding-left: 4.6rem;
+                        position: relative;
+                        transition: $time;
+                        
+                        &:before, &:after{
+                            content: " ";
+                            position: absolute;
+                            width: 14px;
+                            height: 3px;
+                            background-color: black;
+                            left: 0;
+                            transform: translateY(-50%);
+                            transition: $time;
+                        }
+                        &:before{
+                            transform: rotate(45deg);
+                            top: calc(50% - 4px);
+                        }
+                        &:after{
+                            transform: rotate(-45deg);
+                            top: calc(50% + 4px);
+                        }
+                        
+                        &:hover{
+                            color: $secondary-color;
+                            cursor: pointer;
+                            
+                            &:before, &:after{
+                                background-color: $secondary-color;
+                            }
+                        }
+                    }
+                    &__description{
+                        display: none;
+                        font-size: 1.6rem;
+                        font-family: "Noto Serif", serif;
+                        line-height: 1.2;
+                    }
+                }
+            }
+        }
+    }
+}

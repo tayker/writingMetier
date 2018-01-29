@@ -1,0 +1,87 @@
+.header{
+    width: 100%;
+    background-color: $primary-color;
+    box-shadow: 0px 6px 16px 0px rgba(0, 0, 0, 0.3);
+    
+    .content-wrapper{
+        max-width: 144rem;
+        display: flex;
+        justify-content: space-between;
+        padding: 3.3rem 13.4rem 3.8rem 13rem;
+        margin: 0 auto;
+        position: relative;
+        
+        .button{
+            &--menu{
+                display: none;
+            }
+        }
+        .logo{
+            text-align: center;
+            &__text{
+                font-size: 1.4rem;
+                font-family: "Montserrat";
+                color: rgb(255, 255, 255);
+                line-height: 1.5;
+                white-space: nowrap;
+                padding-top: 0.4rem;
+            }
+        }
+        .interface{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 80rem;
+            
+            &__communications{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                
+                .sign{
+                    .button{
+                        &:hover .button__text{
+                            color: $secondary-color;
+                        }
+                        &:first-child{
+                            position: relative;
+                            &:after{
+                                content: "";
+                                position: absolute;
+                                width: 1px;
+                                height: 15px;
+                                background-color: rgb(134, 144, 206);
+                                right: -2px;
+                                top: 50%;
+                                transform: translateY(-50%);
+                            }
+                        }
+                        &__text{
+                            font-size: 1.4rem;
+                            color: rgb(134, 144, 206);
+                            line-height: 1.5;
+                            text-transform: uppercase;
+                            font-weight: normal;
+                        }
+                    }
+                }
+                .order-btn-wrapper{
+                    .button{
+                        
+                        &__text{
+                            color: rgb(255, 255, 255);
+                        }
+                    }
+                }
+            }
+            &__navigation{
+                display: flex;
+                justify-content: space-between;
+                max-width: 64rem;
+                width: 100%;
+                align-self: flex-end;
+            }
+        }
+    }
+}
