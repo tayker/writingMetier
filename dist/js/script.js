@@ -27,6 +27,7 @@ window.onload = function(){
     var parallax = {
         init: function(){
             window.addEventListener('scroll', parallax.scroll);
+            
         },
         scroll: function(){
             let service = document.getElementById('service');
@@ -61,7 +62,6 @@ window.onload = function(){
             if(ytrans <= 2050 && ytrans >= 1600){
                 guaranteesBgText.style.top = ytrans - 1530 + 'px';
                 guaranteesBgText.style.opacity = 1 - ((ytrans - 1530)/500);
-                console.log(guaranteesBgText.style.opacity)
             }
         }
     }
@@ -73,11 +73,12 @@ window.onload = function(){
             this.form = document.getElementById('formOrder');
             
             this.form.addEventListener('submit', formOrder.submit);
+            formOrder.changeColor();
             formOrder.change();
+            formOrder.calculate();
         },
         submit: function(e){
             e.preventDefault();
-            formOrder.calculate();
         },
         calculate: function(){
             let count = 0;
@@ -90,7 +91,6 @@ window.onload = function(){
             let educationValue = 0;
             let deadlineValue = 0;
             let priceMultiplyValue = 0;
-            let penis = null;
             
             education.forEach(function(item){
                 if(item.checked){
@@ -111,7 +111,6 @@ window.onload = function(){
             priceMultiply.forEach(function(item, index){
                 if(item.checked){
                     priceMultiplyValue = item.value;
-                    deadline[index].checked = true;
                 }
                 
             });
@@ -126,16 +125,42 @@ window.onload = function(){
             
             inputs.forEach(function(item){
                 item.onchange = function(){
-                    
+                    formOrder.changeColor();
                     formOrder.calculate();
                 }
                 
             });
+        },
+        changeColor: function(){
+            let priceMultiply = document.querySelectorAll('[name="priceMultiply"]');
+            let deadline = document.querySelectorAll('[name="deadline"]');
+            
+            deadline.forEach(function(item, index) {
+                console.log("Current: " + item.name);   
+                
+                if(item.checked) setDeadlineProgress(index)
+                    
+            });
+            
+            function setDeadlineProgress(index){
+                deadline.forEach(function(item, i){
+                    if(index > i) {
+                        item.parentNode.classList.add('active');
+                        priceMultiply[i].parentNode.classList.add('active');
+                    }
+                    
+                    else {
+                        item.parentNode.classList.remove('active');
+                        priceMultiply[i].parentNode.classList.remove('active');
+                    }
+                });
+            }
         }
     }
     accordeon.init();
     adaptiveMenu.init();
     parallax.init();
     formOrder.init();
+    
 
 }

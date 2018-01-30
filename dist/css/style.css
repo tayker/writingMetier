@@ -1148,6 +1148,8 @@ li {
             .section--order .content-wrapper .order-form__row .progress-bar__item:nth-child(3):after, .section--order .content-wrapper .order-form__row .progress-bar__item:nth-child(4):after {
               left: 20px;
               width: 9.8rem; }
+            .section--order .content-wrapper .order-form__row .progress-bar__item.active:after {
+              background-color: #f83d70; }
           .section--order .content-wrapper .order-form__row .progress-bar--price {
             padding: 0 0 0 0.4rem;
             margin: 0.4rem 0; }
